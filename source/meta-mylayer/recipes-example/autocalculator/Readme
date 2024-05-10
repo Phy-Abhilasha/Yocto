@@ -1,0 +1,42 @@
+# Yocto Recipe: calculator-autotools-staticlib
+
+## Description
+The "calculator-autotools-staticlib" recipe demonstrates how to create a recipe for a calculator program that is built using the Autotools build system and linked statically with a library. This README provides instructions on how to integrate the "calculator-autotools-staticlib" recipe into a Yocto-based system.
+
+## Prerequisites
+- Yocto Project environment set up and initialized
+- Access to the Yocto project source files
+- Familiarity with Yocto build system concepts
+- Understanding of the Autotools build system and static linking
+
+## Usage
+To include the "calculator-autotools-staticlib" recipe in your Yocto image, follow these steps:
+
+### 1. Navigate to Yocto Source Directory
+Navigate to the directory containing your Yocto project source files.
+
+### 2. Add Recipe
+Add the "calculator-autotools-staticlib" recipe to your Yocto project's layer. You can create a new recipe file or add it to an existing one.
+
+### 3. Specify SRC_URI
+In the "calculator-autotools-staticlib" recipe file, specify the source URI (SRC_URI) for fetching the calculator program's source code and any additional library source code. For example:
+SRC_URI = "file://calculator.c
+file://libmycalculator.c
+file://libmycalculator.h"
+
+
+Replace `<source-files>` with the names of the source files containing the calculator program and library code.
+
+### 4. Build Recipe
+Build your Yocto image as usual using the `bitbake` command. For example:
+bitbake <image-name>
+
+
+Replace `<image-name>` with the name of your desired Yocto image.
+
+### 5. Verify Build
+After building the Yocto image successfully, verify that the "calculator-autotools-staticlib" recipe is built and included in the image.
+
+## Notes
+- Ensure that the calculator program's build system is properly configured to use Autotools for building and linking with the static library.
+- Additional customization options for integrating Autotools-based recipes with static libraries into the Yocto build system can be explored in the Yocto Project documentation.
